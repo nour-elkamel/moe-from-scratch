@@ -1,0 +1,37 @@
+# Data & outputs
+data/
+outputs/
+*.ckpt
+*.pt
+*.bin
+*.safetensors
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# W&B
+wandb/
+
+# OS
+.DS_Store
+Thumbs.db

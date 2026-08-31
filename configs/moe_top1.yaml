@@ -1,0 +1,26 @@
+model:
+  vocab_size: 50304
+  d_model: 512
+  n_heads: 8
+  n_layers: 12
+  num_experts: 8
+  top_k: 1
+  d_ff: null
+  capacity_factor: 1.25
+  max_seq_len: 256
+  dropout: 0.1
+  load_balance_coeff: 0.01
+
+data:
+  dataset: "roneneldan/TinyStories"
+  max_samples: null
+  max_eval_samples: 1000
+
+training:
+  batch_size: 32
+  lr: 3e-4
+  min_lr: 3e-5
+  warmup_steps: 200
+  max_steps: 5000
+  eval_every: 250
+  save_path: "outputs/moe_top1"

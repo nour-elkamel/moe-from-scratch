@@ -1,0 +1,43 @@
+# Ablation sweep configuration
+# Run with: bash scripts/run_ablations.sh
+
+base:
+  vocab_size: 50304
+  d_model: 512
+  n_heads: 8
+  n_layers: 12
+  max_seq_len: 256
+  dropout: 0.1
+
+sweeps:
+  num_experts:
+    values: [4, 8, 16, 32]
+    default_top_k: 2
+    default_lb_coeff: 0.01
+
+  top_k:
+    values: [1, 2, 4]
+    default_num_experts: 8
+    default_lb_coeff: 0.01
+
+  load_balance_coeff:
+    values: [0.001, 0.01, 0.1]
+    default_num_experts: 8
+    default_top_k: 2
+
+  capacity_factor:
+    values: [1.0, 1.25, 1.5, 2.0]
+    default_num_experts: 8
+    default_top_k: 2
+    default_lb_coeff: 0.01
+
+training:
+  batch_size: 32
+  lr: 3e-4
+  warmup_steps: 200
+  max_steps: 3000    # Shorter for ablations
+  eval_every: 250
+
+data:
+  dataset: "roneneldan/TinyStories"
+  max_samples: 50000  # Subset for faster sweeps

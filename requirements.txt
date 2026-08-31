@@ -1,0 +1,9 @@
+torch>=2.1.0
+datasets>=2.16.0
+tiktoken>=0.5.0
+wandb>=0.16.0
+omegaconf>=2.3.0
+tqdm
+numpy
+matplotlib
+seaborn

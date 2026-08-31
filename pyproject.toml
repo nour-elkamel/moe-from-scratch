@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "moe-from-scratch"
+version = "0.1.0"
+description = "Mixture-of-Experts transformer built from scratch in PyTorch"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "Nour EL KAMEL", email = "nourelkamelpro@gmail.com"},
+]
+dependencies = [
+    "torch>=2.1.0",
+    "datasets>=2.16.0",
+    "tiktoken>=0.5.0",
+    "wandb>=0.16.0",
+    "omegaconf>=2.3.0",
+    "tqdm",
+    "numpy",
+    "matplotlib",
+    "seaborn",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff", "ipykernel", "jupyter"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
